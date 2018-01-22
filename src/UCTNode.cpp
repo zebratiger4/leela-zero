@@ -295,7 +295,7 @@ float UCTNode::get_eval(int tomove) const {
         if (tomove == FastBoard::WHITE) {
             eval = 1.0f - eval;
         }
-        return eval;
+        return std::max(eval - 0.2f, 0.01f);
     }
 }
 
